@@ -24,6 +24,7 @@ class MemeDetailViewController : UIViewController {
         let rightBarButtonToAddMeme = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "editMeme")
         navigationItem.setRightBarButtonItem(rightBarButtonToAddMeme, animated: true)
         
+        imageView.contentMode = .ScaleAspectFit
         imageView.image = meme.memeImage
     }
     
@@ -31,7 +32,8 @@ class MemeDetailViewController : UIViewController {
         let editMemeController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         
         editMemeController.originalImage = meme.originalImage
-        navigationController!.pushViewController(editMemeController, animated: true)
-
+        
+        //present MemeMe Edit ViewController modally
+        presentViewController(editMemeController, animated: true, completion: nil)
     }
 }

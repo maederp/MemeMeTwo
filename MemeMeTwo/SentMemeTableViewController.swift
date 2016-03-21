@@ -36,7 +36,8 @@ class SentMemeTableViewController: UITableViewController {
     func addNewMeme(){
         let newMemeController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         
-        navigationController!.pushViewController(newMemeController, animated: true)
+        //present MemeMe Edit ViewController modally
+        presentViewController(newMemeController, animated: true, completion: nil)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

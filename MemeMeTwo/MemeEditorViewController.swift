@@ -94,7 +94,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         prefillTextFieldsWithDefault()
         
         imageView.image = nil
-
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -144,11 +144,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         //using completion with Items Handler to save image only if action is not cancelled
         activityController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
             
-            if (!completed){
-                return
+            if (completed){
+                UIImageWriteToSavedPhotosAlbum(meme.memeImage, nil, nil, nil)
+                self.save()
             }
-            UIImageWriteToSavedPhotosAlbum(meme.memeImage, nil, nil, nil)
-            self.save()
         }
     }
     
