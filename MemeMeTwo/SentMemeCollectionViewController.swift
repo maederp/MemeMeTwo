@@ -22,21 +22,21 @@ class SentMemeCollectionViewController: UICollectionViewController{
         super.viewWillAppear(animated)
         
         //make Tabbar visible in case it got hidden
-        self.tabBarController?.tabBar.hidden = false
+        tabBarController?.tabBar.hidden = false
         
         //add + sign for new Memes
         let rightBarButtonToAddMeme = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addNewMeme")
-        self.navigationItem.title = "Sent Memes Collection View"
-        self.navigationItem.setRightBarButtonItem(rightBarButtonToAddMeme, animated: true)
+        navigationItem.title = "Sent Memes Collection View"
+        navigationItem.setRightBarButtonItem(rightBarButtonToAddMeme, animated: true)
         
         //Reload Table Data to reflect all Memes
-        self.collectionView?.reloadData()
+        collectionView?.reloadData()
     }
     
     func addNewMeme(){
-        let newMemeController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        let newMemeController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         
-        self.navigationController!.pushViewController(newMemeController, animated: true)
+        navigationController!.pushViewController(newMemeController, animated: true)
     }
     
     // MARK: Collection View Data Source
@@ -55,9 +55,9 @@ class SentMemeCollectionViewController: UICollectionViewController{
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let memeDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let memeDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         
         memeDetailViewController.meme = memes[indexPath.row]
-        self.navigationController?.pushViewController(memeDetailViewController, animated: true)
+        navigationController?.pushViewController(memeDetailViewController, animated: true)
     }
 }

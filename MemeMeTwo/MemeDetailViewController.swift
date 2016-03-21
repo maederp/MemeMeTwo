@@ -18,20 +18,20 @@ class MemeDetailViewController : UIViewController {
         super.viewWillAppear(animated)
         
         //hide Tabbar
-        self.tabBarController?.tabBar.hidden = true
+        tabBarController?.tabBar.hidden = true
         
         //add "Edit" button for to Edit a stored Memes
         let rightBarButtonToAddMeme = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "editMeme")
-        self.navigationItem.setRightBarButtonItem(rightBarButtonToAddMeme, animated: true)
+        navigationItem.setRightBarButtonItem(rightBarButtonToAddMeme, animated: true)
         
         imageView.image = meme.memeImage
     }
     
     func editMeme(){
-        let editMemeController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        let editMemeController = storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
         
         editMemeController.originalImage = meme.originalImage
-        self.navigationController!.pushViewController(editMemeController, animated: true)
+        navigationController!.pushViewController(editMemeController, animated: true)
 
     }
 }

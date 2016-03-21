@@ -54,7 +54,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
         //enable the original image is visible if "Edit" is clicked in DetailView
         if let i = originalImage as UIImage! {
-            self.imageView.image = i
+            imageView.image = i
             textFieldsToBeHidden(false)
             originalImage = nil
         }
@@ -77,7 +77,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         prefillTextFieldsWithDefault()
         
         //remove the unnecessary TabBar
-        self.tabBarController?.tabBar.hidden = true
+        tabBarController?.tabBar.hidden = true
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -256,7 +256,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         alert.addAction(arialFont)
         alert.addAction(helveticaFont)
         
-        self.presentViewController(alert, animated: true, completion: nil)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func textFieldsFontChange(newFont : UIFont){

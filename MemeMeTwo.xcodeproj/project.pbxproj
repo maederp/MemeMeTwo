@@ -78,7 +78,6 @@
 		D05C998E1C75063200FFD771 /* MemeMeTwo */ = {
 			isa = PBXGroup;
 			children = (
-				D047D6A01C96AB19008FB3EF /* Resources */,
 				D05C998F1C75063200FFD771 /* AppDelegate.swift */,
 				D05C99931C75063200FFD771 /* Main.storyboard */,
 				D05C99961C75063200FFD771 /* Assets.xcassets */,
@@ -92,6 +91,7 @@
 				D05C99A31C7EDEA700FFD771 /* Meme.swift */,
 				D047D69C1C92E1A8008FB3EF /* MemeTableViewCell.swift */,
 				D047D6981C903E68008FB3EF /* MemeCollectionViewCell.swift */,
+				D047D6A01C96AB19008FB3EF /* Resources */,
 			);
 			path = MemeMeTwo;
 			sourceTree = "<group>";
